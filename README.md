@@ -5,7 +5,6 @@ Personal portfolio site for **Prince Benedict Wachira** — software engineer an
 Built as a single-page React application with a minimalist black-and-white, industrial aesthetic. Focused on backend engineering, cloud-native infrastructure, and mobile development.
 
 ---
-
 ## Tech Stack
 
 | Layer | Technology |
