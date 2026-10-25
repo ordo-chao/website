@@ -1,0 +1,644 @@
+/* ============================================================
+   App.module.css — all page-specific styles
+   Used as: import style from './App.module.css';
+            <div className={style.page}>
+   ============================================================ */
+
+/* ---------- PAGE / SECTION ---------- */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.muted { color: var(--muted); }
+.accent { color: var(--accent); }
+
+.h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+/* ---------- SHARED CARD GRID ---------- */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+/* ---------- NAV ---------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.navLogo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.navLinks a { transition: color 0.15s; }
+.navLinks a:hover { color: var(--fg); }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+  position: relative;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 9vw, 6.5rem);
+  margin-top: 8px;
+}
+
+.heroTitleMuted { color: var(--muted); }
+
+.heroSub {
+  margin-top: 24px;
+  max-width: 600px;
+  color: var(--muted);
+}
+
+.heroHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.heroHighlights span {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.heroActions {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroScroll {
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroScroll { animation: none; }
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+
+.btn:hover { background: transparent; color: var(--fg); }
+
+.btnGhost {
+  background: transparent;
+  color: var(--fg);
+}
+
+.btnGhost:hover { background: var(--fg); color: var(--bg); }
+
+/* ---------- ABOUT ---------- */
+.about {
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.aboutRight {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ---------- EXPERIENCE ---------- */
+.experience { padding: 80px 0; }
+
+.expList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.expItem {
+  background: var(--bg);
+  padding: 28px;
+}
+
+.expHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.expRole {
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.expCompany {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.expPeriod {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.expPoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.expPoints li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.expPoints li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ---------- WORK ---------- */
+.projects { padding: 80px 0; }
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.filterBtn:hover { color: var(--fg); border-color: var(--muted); }
+
+.filterBtnActive {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.projectList {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.projectRow {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+a.projectRow { cursor: pointer; }
+
+a.projectRow:hover,
+.projectRow:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.projectRow:hover .projectDesc,
+.projectRow:hover .projectNum,
+.projectRow:hover .projectTag,
+.projectRow:hover .projectYear,
+.projectRow:hover .projectCat {
+  color: var(--bg);
+}
+
+.projectNum {
+  font-size: 11px;
+  color: var(--muted);
+  margin-right: 12px;
+}
+
+.projectName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.projectCat {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projectDesc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 560px;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- FEATURED PROJECT ---------- */
+.featured { padding: 80px 0; }
+
+.featuredBlock {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blockTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.featuredList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featuredList li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.featuredList li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.featuredActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* ---------- ARCHITECTURE ---------- */
+.architecture { padding: 80px 0; }
+
+.archCard {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.archTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.archDiagram {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  background: #050505;
+  border: 1px dashed var(--border);
+  font-size: 12px;
+}
+
+.archStep {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--fg);
+}
+
+.archArrow {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.archWhy { font-size: 12px; line-height: 1.7; }
+
+/* ---------- INFRA ---------- */
+.infra { padding: 80px 0; }
+
+.infraCard {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.infraCard:hover { background: var(--fg); color: var(--bg); }
+.infraCard:hover .infraDesc,
+.infraCard:hover .infraTech { color: var(--bg); }
+
+.infraTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.infraDesc { font-size: 13px; color: var(--muted); }
+
+.infraTech {
+  margin-top: auto;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.infraNote {
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 32px;
+}
+
+/* ---------- PRINCIPLES ---------- */
+.principles { padding: 80px 0; }
+
+.principleCard {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.principleCard:hover { background: var(--fg); color: var(--bg); }
+.principleCard:hover .muted { color: var(--bg); }
+
+.principleTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ---------- STACK ---------- */
+.stack { padding: 80px 0; }
+
+.skillGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skillGroupTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.stackCell {
+  background: var(--bg);
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  transition: background 0.15s, color 0.15s;
+}
+
+.stackCell:hover { background: var(--fg); color: var(--bg); }
+
+/* ---------- EDUCATION & CERTIFICATIONS ---------- */
+.education { padding: 80px 0; }
+
+.eduRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.certCard {
+  background: var(--bg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.certName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.certMeta {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.certDesc { font-size: 12px; line-height: 1.6; }
+
+.certLink {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  align-self: flex-start;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.certLink:hover { color: var(--fg); border-color: var(--fg); }
+
+/* ---------- CONTACT ---------- */
+.contact {
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.contactEmail {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  transition: opacity 0.15s;
+}
+
+.contactEmail:hover { opacity: 0.7; }
+
+.contactRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.socialLink {
+  font-size: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.socialLink:hover {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .navLinks { gap: 14px; font-size: 11px; }
+}
+
+@media (max-width: 720px) {
+  .navLinks { display: none; }
+  .about { grid-template-columns: 1fr; gap: 32px; }
+  .projectRow { flex-direction: column; align-items: flex-start; }
+  .projectMeta { flex-direction: row; align-items: center; gap: 12px; }
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contactRight { align-items: flex-start; }
+  .socials { justify-content: flex-start; }
+}
