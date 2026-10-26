@@ -29,6 +29,11 @@ export default defineConfig({
         '/deployment-guides/redis',
         '/deployment-guides/minio',
         '/deployment-guides',
+        '/about',
+        '/projects',
+        '/stack',
+        '/contact',
+        '/work',
       ]
     })
   ],
