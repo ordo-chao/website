@@ -351,10 +351,6 @@ export default function DevOpsPage() {
 
       <SiteNav variant="devops" />
 
-      <div className={style.dopsBackBar}>
-        <Link to="/" className={style.dopsBackLink}>← Back to portfolio</Link>
-      </div>
-
       {/* ===== HERO ===== */}
       <section className={style.dopsHero}>
         <p className={style.dopsLabel}>[ DEVOPS / WORKFLOW VISUALIZATION ]</p>

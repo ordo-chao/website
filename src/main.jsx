@@ -27,6 +27,11 @@ import ArgoCD from './pages/Deployment-Guides/ArgoCD/index.jsx';
 import GitOpsRepo from './pages/Deployment-Guides/GitOpsRepo/index.jsx';
 import ClusterSetup from './pages/Deployment-Guides/ClusterSetup/index.jsx';
 import DeploymentGuides from './pages/Deployment-Guides/index.jsx';
+import AboutPage from './pages/AboutPage/index.jsx';
+import ProjectsPage from './pages/ProjectsPage/index.jsx';
+import StackPage from './pages/StackPage/index.jsx';
+import ContactPage from './pages/ContactPage/index.jsx';
+import WorkPage from './pages/WorkPage/index.jsx';
 
 
 const router = createBrowserRouter([
@@ -51,6 +56,11 @@ const router = createBrowserRouter([
   { path: '/deployment-guides/gitops-repo', element: <GitOpsRepo /> },
   { path: '/deployment-guides/cluster-setup', element: <ClusterSetup /> },
   { path: '/deployment-guides', element: <DeploymentGuides /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/projects', element: <ProjectsPage /> },
+  { path: '/stack', element: <StackPage /> },
+  { path: '/contact', element: <ContactPage /> },
+  { path: '/work', element: <WorkPage /> },
 ]);
 
 export default function AppWrapper() {

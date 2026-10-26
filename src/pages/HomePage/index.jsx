@@ -239,12 +239,13 @@ export default function HomePage() {
           reliable, maintainable systems.
         </p>
         <div className={style.heroHighlights}>
+          <span>Frontend Development</span>
           <span>Backend Engineering</span>
           <span>Cloud-Native Infrastructure</span>
           <span>Mobile Development</span>
         </div>
         <div className={style.heroActions}>
-          <a href="#work" className={style.btn}>Explore my work →</a>
+          <a href="/work" className={style.btn}>Explore my work →</a>
           <Link to="/devops" className={`${style.btn} ${style.btnGhost}`}>
             How I ship code →
           </Link>
