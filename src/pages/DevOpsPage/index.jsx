@@ -18,11 +18,15 @@ const guideDocs = {
   '/deployment-guides/redis': 'https://redis.io/docs/latest/',
   '/deployment-guides/minio': 'https://min.io/docs/minio/kubernetes/upstream/',
   '/deployment-guides/mailu': 'https://mailu.io/master/',
+  '/deployment-guides/helm': 'https://helm.sh/docs/',
+  '/deployment-guides/argocd': 'https://argo-cd.readthedocs.io/',
   '/deployment-guides/github-actions': 'https://docs.github.com/en/actions',
   '/deployment-guides/grafana': 'https://grafana.com/docs/grafana/latest/',
   '/deployment-guides/vault': 'https://developer.hashicorp.com/vault/docs',
   '/deployment-guides/uptime-kuma': 'https://github.com/louislam/uptime-kuma/wiki',
   '/deployment-guides/longhorn': 'https://longhorn.io/docs/',
+  '/deployment-guides/gitops-repo': 'https://argo-cd.readthedocs.io/en/stable/user-guide/best_practices/',
+  '/deployment-guides/cluster-setup': 'https://docs.k3s.io/installation/requirements',
 };
 
 const pipelineSteps = [
@@ -135,11 +139,32 @@ const planes = [
 
 const tools = [
   {
+  name: 'K3s + WireGuard',
+  role: 'Cluster substrate',
+  why: 'Every app, every controller, every backup target runs on a cluster that has to be built before anything else exists. K3s gives a lightweight, single-binary Kubernetes — no external etcd, no cloud dependency. WireGuard encrypts every pod-to-pod packet between nodes so a compromise on one host does not expose cross-node traffic.',
+  replaces: 'Full Kubernetes install (kubeadm + etcd + CNI) · Unencrypted VXLAN pod networking · Cloud-managed control planes',
+  config: '3 server nodes (control plane) · N worker nodes · flannel-backend=wireguard-native · SSD on control plane',
+},
+  {
+  name: 'GitOps Repository',
+  role: 'The source of truth',
+  why: 'Every service, every platform component, every incident write-up lives in one repo. The structure is deliberate — Documentation, Infra, Reports, Services. The ArgoCD Applications point at directories in this repo, so the repo layout is the deployment layout. If something is not in this repo, it is not running in the cluster.',
+  replaces: 'Scattered per-service repos · Wiki-based documentation · Ad-hoc kubectl apply',
+  config: 'One repo · 5 top-level dirs · one directory per Argo Application · no secrets committed',
+},
+  {
+    name: 'Helm',
+    role: 'Kubernetes package manager',
+    why: 'Every third-party tool in this cluster — Grafana, Vault, Longhorn, Mailu — ships as a Helm chart. Helm is the packaging format: templates, values, and versioned releases. It is not the deploy mechanism — ArgoCD renders the chart and applies the result, without ever running helm install against the cluster.',
+    replaces: 'Hand-maintained manifest sets per tool · Version-pinned YAML copies · Custom install scripts',
+    config: 'Charts rendered by ArgoCD · targetRevision pins chart version · values declared in GitOps repo',
+  },
+  {
     name: 'Argo CD',
     role: 'GitOps controller',
-    why: 'Argo makes Git the only way anything reaches the cluster. Every deploy is a commit, every rollback is a revert, and drift from the declared state gets automatically reverted. No one can kubectl apply their way around review.',
-    replaces: 'Manual deploys · Helm upgrade pipelines · Ansible playbooks',
-    config: 'Two Applications: backend-service, frontend-service',
+    why: 'ArgoCD is the only writer to the cluster. It watches Git and reconciles the cluster toward it — drift is reverted, rollback is a Git revert, and Helm charts are rendered without helm install. Every Application in this series is an ArgoCD resource, not a raw Kubernetes manifest.',
+    replaces: 'Manual kubectl apply · Helm install in CI · Out-of-band cluster edits',
+    config: 'Applications per service · selfHeal: true · prune: false for stateful apps · ServerSideApply',
   },
   {
     name: 'HashiCorp Vault',

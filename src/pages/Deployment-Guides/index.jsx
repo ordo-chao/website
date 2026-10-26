@@ -73,6 +73,26 @@ const guideMeta = {
     tag: 'Storage',
     docs: 'https://longhorn.io/docs/',
   },
+    '/deployment-guides/helm': {
+    desc: 'Package manager for Kubernetes — charts, values, and release lifecycle.',
+    tag: 'Platform',
+    docs: 'https://helm.sh/docs/',
+  },
+  '/deployment-guides/argocd': {
+    desc: 'GitOps controller — reconciles the cluster toward Git, supports Helm and raw manifests.',
+    tag: 'Platform',
+    docs: 'https://argo-cd.readthedocs.io/',
+  },
+  '/deployment-guides/gitops-repo': {
+  desc: 'The Devopps repository — structure, conventions, and what lives where.',
+  tag: 'Platform',
+  docs: 'https://argo-cd.readthedocs.io/en/stable/user-guide/best_practices/',
+},
+'/deployment-guides/cluster-setup': {
+  desc: 'K3s installation, WireGuard multi-node clustering, control plane sizing, Traefik, and Velero.',
+  tag: 'Infra',
+  docs: 'https://docs.k3s.io/installation/requirements',
+},
 };
 
 export default function DeploymentIndex() {

@@ -2,7 +2,11 @@ import { Link, useLocation } from 'react-router-dom';
 import style from './DeploymentNav.module.css';
 
 export const DEPLOYMENT_ORDER = [
+  { path: '/deployment-guides/cluster-setup',  label: 'Cluster Setup' },
   { path: '/deployment-guides/github-actions', label: 'GitHub Actions' },
+  { path: '/deployment-guides/gitops-repo',    label: 'GitOps Repo' },
+  { path: '/deployment-guides/helm', label: 'Helm' },
+  { path: '/deployment-guides/argocd', label: 'ArgoCD' },
     { path: '/deployment-guides/vault', label: 'Vault' },
       { path: '/deployment-guides/longhorn', label: 'Longhorn' },
       { path: '/deployment-guides/rabbitmq', label: 'RabbitMQ' },
