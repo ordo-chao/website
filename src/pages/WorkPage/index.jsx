@@ -215,10 +215,6 @@ export default function WorkPage() {
 
       <SiteNav variant="devops" />
 
-      <div className={style.backBar}>
-        <Link to="/" className={style.backLink}>← Back to portfolio</Link>
-      </div>
-
       {/* ===== HERO ===== */}
       <section className={style.hero}>
         <p className={style.label}>[ WORK / THE FULL ARC ]</p>
