@@ -1,14 +1,17 @@
 .nav {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #2a2a2a;
+  z-index: 100;
+}
+
+.navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0;
-  border-bottom: 1px solid #2a2a2a;
-  position: sticky;
-  top: 0;
-  background: rgba(10, 10, 10, 0.9);
-  backdrop-filter: blur(8px);
-  z-index: 100;
+  padding: 20px 0;
 }
 
 .navLogo {
@@ -22,6 +25,7 @@
 
 .accent { color: #d4663a; }
 
+/* ---------- DESKTOP LINKS ---------- */
 .navLinks {
   display: flex;
   gap: 20px;
@@ -52,10 +56,124 @@
   background: #d4663a;
 }
 
+/* ---------- MOBILE TOGGLE ---------- */
+.menuToggle {
+  display: none;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.menuBar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #f0f0f0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.menuToggleOpen .menuBar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggleOpen .menuBar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggleOpen .menuBar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- SLIDE-DOWN DRAWER ---------- */
+.drawer {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  border-top: 1px solid transparent;
+}
+
+.drawerOpen {
+  max-height: 500px;
+  border-top-color: #2a2a2a;
+}
+
+.drawerInner {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 16px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 4px 16px 16px;
+  text-decoration: none;
+  color: #666;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.drawerLink:hover,
+.drawerLink:active {
+  color: #f0f0f0;
+  border-left-color: #d4663a;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.drawerLinkCurrent {
+  color: #f0f0f0;
+  border-left-color: #d4663a;
+}
+
+.drawerNum {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #444;
+  min-width: 24px;
+}
+
+.drawerLinkCurrent .drawerNum,
+.drawerLink:hover .drawerNum {
+  color: #d4663a;
+}
+
+.drawerLabel {
+  flex: 1;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.drawerArrow {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #444;
+  padding-right: 4px;
+}
+
+.drawerLink:hover .drawerArrow,
+.drawerLinkCurrent .drawerArrow {
+  color: #f0f0f0;
+}
+
+/* ---------- BREAKPOINTS ---------- */
 @media (max-width: 860px) {
   .navLinks { gap: 14px; font-size: 11px; }
 }
 
 @media (max-width: 720px) {
   .navLinks { display: none; }
+  .menuToggle { display: flex; }
+  .drawer { display: block; }
 }

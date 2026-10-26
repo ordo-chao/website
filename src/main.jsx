@@ -19,9 +19,13 @@ import Vault from './pages/Deployment-Guides/Vault/index.jsx';
 import UptimeKuma from './pages/Deployment-Guides/UptimeKuma/index.jsx';
 import Longhorn from './pages/Deployment-Guides/Longhorn/index.jsx';
 import RabbitMQ from './pages/Deployment-Guides/RabbitMQ/index.jsx';
-import Mailu from './pages/DevOpsPage/Mailu/index.jsx';
+import Mailu from './pages/Deployment-Guides/Mailu/index.jsx';
 import Redis from './pages/Deployment-Guides/Redis/index.jsx';
-import MinIO from './pages/DevOpsPage/MinIO/index.jsx';
+import MinIO from './pages/Deployment-Guides/MinIO/index.jsx';
+import Helm from './pages/Deployment-Guides/Helm/index.jsx';
+import ArgoCD from './pages/Deployment-Guides/ArgoCD/index.jsx';
+import GitOpsRepo from './pages/Deployment-Guides/GitOpsRepo/index.jsx';
+import ClusterSetup from './pages/Deployment-Guides/ClusterSetup/index.jsx';
 import DeploymentGuides from './pages/Deployment-Guides/index.jsx';
 
 
@@ -42,6 +46,10 @@ const router = createBrowserRouter([
   { path: '/deployment-guides/mailu', element: <Mailu /> },
   { path: '/deployment-guides/redis', element: <Redis /> },
   { path: '/deployment-guides/minio', element: <MinIO /> },
+  { path: '/deployment-guides/helm', element: <Helm /> },
+  { path: '/deployment-guides/argocd', element: <ArgoCD /> },
+  { path: '/deployment-guides/gitops-repo', element: <GitOpsRepo /> },
+  { path: '/deployment-guides/cluster-setup', element: <ClusterSetup /> },
   { path: '/deployment-guides', element: <DeploymentGuides /> },
 ]);
 
