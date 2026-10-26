@@ -3,13 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import style from './SiteNav.module.css';
 
 const NAV_ITEMS = [
-  { label: 'About', href: '#about', type: 'anchor' },
-  { label: 'Experience', href: '#experience', type: 'anchor' },
-  { label: 'Work', href: '#work', type: 'anchor' },
-  { label: 'Infrastructure', href: '#infra', type: 'anchor' },
-  { label: 'Stack', href: '#stack', type: 'anchor' },
+  { label: 'About', href: '/about', type: 'route' },
+  { label: 'Projects', href: '/projects', type: 'route' },
   { label: 'DevOps', href: '/devops', type: 'route' },
-  { label: 'Contact', href: '#contact', type: 'anchor' },
+  { label: 'Work', href: '/work', type: 'route' },
+  { label: 'Stack', href: '/stack', type: 'route' },
+
+  { label: 'Contact', href: '/contact', type: 'route' },
 ];
 
 export default function SiteNav({ variant = 'home' }) {
