@@ -11,8 +11,8 @@ const channels = [
   {
     id: 'email',
     label: 'Email',
-    handle: 'prince@ordochao.tech',
-    href: 'mailto:prince@ordochao.tech',
+    handle: 'princeben9312@gmail.com',
+    href: 'mailto:princeben9312@gmail.com',
     primary: true,
     responseTime: 'Usually within 1 business day',
     why: 'Best for anything that needs a paper trail — projects, contracts, technical questions, anything you might want to reference later.',
@@ -21,7 +21,7 @@ const channels = [
     id: 'github',
     label: 'GitHub',
     handle: '@ordochao',
-    href: 'https://github.com/ordochao',
+    href: 'https://github.com/ordo-chao',
     responseTime: 'Issues and PRs usually within 2–3 days',
     why: 'Best for code-level discussion. If you are filing an issue on a repo, that is the right place — it keeps the conversation attached to the code.',
   },
@@ -154,10 +154,10 @@ export default function ContactPage() {
         <p className={style.label}>// PRIMARY CHANNEL</p>
         <h2 className={style.h2}>Start here.</h2>
 
-        <a href="mailto:prince@ordochao.tech" className={style.primaryCard}>
+        <a href="mailto:princeben9312@gmail.com" className={style.primaryCard}>
           <div className={style.primaryLeft}>
             <span className={style.primaryLabel}>EMAIL</span>
-            <span className={style.primaryValue}>prince@ordochao.tech</span>
+            <span className={style.primaryValue}>princeben9312@gmail.com</span>
           </div>
           <div className={style.primaryRight}>
             <span className={style.primaryArrow}>→</span>
@@ -281,8 +281,8 @@ export default function ContactPage() {
         </p>
 
         <div className={style.actions}>
-          <a href="mailto:prince@ordochao.tech" className={style.btn}>
-            prince@ordochao.tech →
+          <a href="mailto:princeben9312@gmail.com" className={style.btn}>
+            princeben9312@gmail.com →
           </a>
           <Link to="/about" className={`${style.btn} ${style.btnGhost}`}>
             Read about me first →

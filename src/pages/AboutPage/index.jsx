@@ -244,8 +244,8 @@ export default function AboutPage() {
         </p>
 
         <div className={style.actions}>
-          <a href="mailto:prince@ordochao.tech" className={style.btn}>
-            prince@ordochao.tech →
+          <a href="mailto:princeben9312@gmail.com" className={style.btn}>
+            princeben9312@gmail.com →
           </a>
           <Link to="/devops" className={`${style.btn} ${style.btnGhost}`}>
             See how I ship code →
