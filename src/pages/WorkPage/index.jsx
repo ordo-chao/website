@@ -311,8 +311,8 @@ export default function WorkPage() {
           <Link to="/devops" className={`${style.btn} ${style.btnGhost}`}>
             Explore DevOps →
           </Link>
-          <a href="mailto:prince@ordochao.tech" className={`${style.btn} ${style.btnGhost}`}>
-            prince@ordochao.tech
+          <a href="mailto:princeben9312@gmail.com" className={`${style.btn} ${style.btnGhost}`}>
+            princeben9312@gmail.com
           </a>
         </div>
       </section>

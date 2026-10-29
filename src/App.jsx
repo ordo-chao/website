@@ -209,7 +209,7 @@ const skillGroups = [
 ];
 
 const socials = [
-  { label: 'GitHub',   href: 'https://github.com/ordochao' },
+  { label: 'GitHub',   href: 'https://github.com/ordo-chao' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ordo-chao' },
   { label: 'Instagram',    href: 'https://www.instagram.com/ordo_cha0' },
   { label: 'Email',    href: 'mailto:princeben9312@gmail.com' },
@@ -530,8 +530,8 @@ export default function App() {
           <p className="muted" style={{ marginBottom: 16, maxWidth: 380 }}>
             Backend Engineering · DevOps · Platform Engineering
           </p>
-          <a href="mailto:prince@ordochao.tech" className="contact-email">
-            prince@ordochao.tech
+          <a href="mailto:princeben9312@gmail.com" className="contact-email">
+            princeben9312@gmail.com
           </a>
         </div>
         <div className="contact-right">
