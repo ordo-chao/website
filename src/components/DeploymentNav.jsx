@@ -26,6 +26,8 @@ export const DEPLOYMENT_ORDER = [
 
   { path: '/deployment-guides/minio', label: 'MinIO' },
 
+  { path: '/deployment-guides/kubecost', label: 'Kubecost' },
+
 ];
 
 export function DeploymentBreadcrumb() {
