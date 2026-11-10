@@ -93,6 +93,11 @@ const guideMeta = {
   tag: 'Infra',
   docs: 'https://docs.k3s.io/installation/requirements',
 },
+'/deployment-guides/kubecost': {
+  desc: 'Helm install, Longhorn storage sizing, Traefik ingress with basic-auth, and ArgoCD adoption via ServerSideApply.',
+  tag: 'Observability',
+  docs: 'https://docs.kubecost.com/install-and-configure/install',
+},
 };
 
 export default function DeploymentIndex() {

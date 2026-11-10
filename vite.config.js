@@ -28,6 +28,7 @@ export default defineConfig({
         '/deployment-guides/mailu',
         '/deployment-guides/redis',
         '/deployment-guides/minio',
+        '/deployment-guides/kubecost',
         '/deployment-guides',
         '/about',
         '/projects',

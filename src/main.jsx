@@ -23,6 +23,7 @@ import Mailu from './pages/Deployment-Guides/Mailu/index.jsx';
 import Redis from './pages/Deployment-Guides/Redis/index.jsx';
 import MinIO from './pages/Deployment-Guides/MinIO/index.jsx';
 import Helm from './pages/Deployment-Guides/Helm/index.jsx';
+import Kubecost from './pages/Deployment-Guides/Kubecost/index.jsx';
 import ArgoCD from './pages/Deployment-Guides/ArgoCD/index.jsx';
 import GitOpsRepo from './pages/Deployment-Guides/GitOpsRepo/index.jsx';
 import ClusterSetup from './pages/Deployment-Guides/ClusterSetup/index.jsx';
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
   { path: '/deployment-guides/argocd', element: <ArgoCD /> },
   { path: '/deployment-guides/gitops-repo', element: <GitOpsRepo /> },
   { path: '/deployment-guides/cluster-setup', element: <ClusterSetup /> },
+  { path: '/deployment-guides/kubecost', element: <Kubecost /> },
   { path: '/deployment-guides', element: <DeploymentGuides /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/projects', element: <ProjectsPage /> },
